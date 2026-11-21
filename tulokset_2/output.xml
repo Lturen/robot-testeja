@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.15.0 on win32)" generated="2026-11-20T11:47:13.221260" rpa="false" schemaversion="5">
+<suite id="s1" name="Test 2" source="C:\Users\Lauri Taurén\Desktop\Robot testeja\test_2.robot">
+<kw name="Avaa Lukkarikone" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:13.612589" level="INFO">Opening browser 'chrome' to base url 'https://lukkarikone.xamk.fi/#/schedule'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument("--disable-search-engine-choice-screen");add_argument("--start-maximized")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-11-20T11:47:13.612332" elapsed="1.033349"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${VIIKKO_NAPPI}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-20T11:47:14.646067" elapsed="0.293310"/>
+</kw>
+<status status="PASS" start="2026-11-20T11:47:13.611647" elapsed="1.327869"/>
+</kw>
+<test id="s1-t1" name="Kalenterin Nakymapainikkeet Toimivat" line="18">
+<kw name="Nakyman Pitaa Olla">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${nakyma}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-20T11:47:14.941631" elapsed="0.014199"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:14.976821" level="INFO">${luokat} = fc-agendaWeek-button fc-button fc-state-default fc-state-active</msg>
+<var>${luokat}</var>
+<arg>${nappi}</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:47:14.956000" elapsed="0.020904"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${luokat}</arg>
+<arg>fc-state-active</arg>
+<doc>Fails if the `container` does not contain the `item` one or more times.</doc>
+<status status="PASS" start="2026-11-20T11:47:14.977155" elapsed="0.000769"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:15.019037" level="INFO">${otsikko} = 16. – 20. marraskuu 2026</msg>
+<var>${otsikko}</var>
+<arg>${OTSIKKO}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:47:14.978113" elapsed="0.040992"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-11-20T11:47:15.019615" level="INFO">Otsikko: 16. – 20. marraskuu 2026</msg>
+<arg>Otsikko: ${otsikko}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.019307" elapsed="0.000358"/>
+</kw>
+<kw name="Should Match Regexp" owner="BuiltIn">
+<arg>${otsikko}</arg>
+<arg>${otsikon_muoto}</arg>
+<doc>Fails if the `string` does not match the regular expression `pattern`.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.019807" elapsed="0.000520"/>
+</kw>
+<arg>${VIIKKO_NAPPI}</arg>
+<arg>${VIIKKO_NAKYMA}</arg>
+<arg>^\\d+\\..*\\d{4}$</arg>
+<doc>Tarkistaa, että painike on aktiivinen, oikea näkymä on näkyvissä ja otsikko vastaa näkymän muotoa.</doc>
+<status status="PASS" start="2026-11-20T11:47:14.941011" elapsed="0.079475"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:15.107482" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="nakyma_1_viikko_oletus.png"&gt;&lt;img src="nakyma_1_viikko_oletus.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>nakyma_1_viikko_oletus.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.020755" elapsed="0.086961"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:15.108405" level="INFO">Clicking button 'css:button.fc-month-button'.</msg>
+<arg>${KUUKAUSI_NAPPI}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.107978" elapsed="0.227926"/>
+</kw>
+<kw name="Nakyman Pitaa Olla">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${nakyma}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.336433" elapsed="0.017541"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:15.364285" level="INFO">${luokat} = fc-month-button fc-button fc-state-default fc-corner-left fc-state-active</msg>
+<var>${luokat}</var>
+<arg>${nappi}</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.354234" elapsed="0.010096"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${luokat}</arg>
+<arg>fc-state-active</arg>
+<doc>Fails if the `container` does not contain the `item` one or more times.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.364492" elapsed="0.000325"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:15.375719" level="INFO">${otsikko} = marraskuu 2026</msg>
+<var>${otsikko}</var>
+<arg>${OTSIKKO}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.364924" elapsed="0.010842"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-11-20T11:47:15.376242" level="INFO">Otsikko: marraskuu 2026</msg>
+<arg>Otsikko: ${otsikko}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.375959" elapsed="0.000329"/>
+</kw>
+<kw name="Should Match Regexp" owner="BuiltIn">
+<arg>${otsikko}</arg>
+<arg>${otsikon_muoto}</arg>
+<doc>Fails if the `string` does not match the regular expression `pattern`.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.376423" elapsed="0.000315"/>
+</kw>
+<arg>${KUUKAUSI_NAPPI}</arg>
+<arg>${KUUKAUSI_NAKYMA}</arg>
+<arg>^\\S+ \\d{4}$</arg>
+<doc>Tarkistaa, että painike on aktiivinen, oikea näkymä on näkyvissä ja otsikko vastaa näkymän muotoa.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.336129" elapsed="0.040678"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:15.455910" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="nakyma_2_kuukausi.png"&gt;&lt;img src="nakyma_2_kuukausi.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>nakyma_2_kuukausi.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.376941" elapsed="0.079069"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:15.456363" level="INFO">Clicking button 'css:button.fc-agendaDay-button'.</msg>
+<arg>${PAIVA_NAPPI}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.456157" elapsed="0.083052"/>
+</kw>
+<kw name="Nakyman Pitaa Olla">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${nakyma}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.539936" elapsed="0.016268"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:15.566261" level="INFO">${luokat} = fc-agendaDay-button fc-button fc-state-default fc-corner-right fc-state-active</msg>
+<var>${luokat}</var>
+<arg>${nappi}</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.556465" elapsed="0.009840"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${luokat}</arg>
+<arg>fc-state-active</arg>
+<doc>Fails if the `container` does not contain the `item` one or more times.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.566466" elapsed="0.000326"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:15.577611" level="INFO">${otsikko} = 20. marraskuuta 2026</msg>
+<var>${otsikko}</var>
+<arg>${OTSIKKO}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.566919" elapsed="0.010737"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-11-20T11:47:15.578117" level="INFO">Otsikko: 20. marraskuuta 2026</msg>
+<arg>Otsikko: ${otsikko}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.577844" elapsed="0.000317"/>
+</kw>
+<kw name="Should Match Regexp" owner="BuiltIn">
+<arg>${otsikko}</arg>
+<arg>${otsikon_muoto}</arg>
+<doc>Fails if the `string` does not match the regular expression `pattern`.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.578290" elapsed="0.000320"/>
+</kw>
+<arg>${PAIVA_NAPPI}</arg>
+<arg>${PAIVA_NAKYMA}</arg>
+<arg>^\\d+\\. \\S+ \\d{4}$</arg>
+<doc>Tarkistaa, että painike on aktiivinen, oikea näkymä on näkyvissä ja otsikko vastaa näkymän muotoa.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.539486" elapsed="0.039193"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:15.706204" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="nakyma_3_paiva.png"&gt;&lt;img src="nakyma_3_paiva.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>nakyma_3_paiva.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.578809" elapsed="0.127509"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:15.706760" level="INFO">Clicking button 'css:button.fc-agendaWeek-button'.</msg>
+<arg>${VIIKKO_NAPPI}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.706501" elapsed="0.089828"/>
+</kw>
+<kw name="Nakyman Pitaa Olla">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${nakyma}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.796839" elapsed="0.049594"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:15.855324" level="INFO">${luokat} = fc-agendaWeek-button fc-button fc-state-default fc-state-active</msg>
+<var>${luokat}</var>
+<arg>${nappi}</arg>
+<arg>class</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.846766" elapsed="0.008600"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${luokat}</arg>
+<arg>fc-state-active</arg>
+<doc>Fails if the `container` does not contain the `item` one or more times.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.855517" elapsed="0.000305"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:15.864864" level="INFO">${otsikko} = 16. – 20. marraskuu 2026</msg>
+<var>${otsikko}</var>
+<arg>${OTSIKKO}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.855924" elapsed="0.008986"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-11-20T11:47:15.865366" level="INFO">Otsikko: 16. – 20. marraskuu 2026</msg>
+<arg>Otsikko: ${otsikko}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.865099" elapsed="0.000312"/>
+</kw>
+<kw name="Should Match Regexp" owner="BuiltIn">
+<arg>${otsikko}</arg>
+<arg>${otsikon_muoto}</arg>
+<doc>Fails if the `string` does not match the regular expression `pattern`.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.865548" elapsed="0.000249"/>
+</kw>
+<arg>${VIIKKO_NAPPI}</arg>
+<arg>${VIIKKO_NAKYMA}</arg>
+<arg>^\\d+\\..*\\d{4}$</arg>
+<doc>Tarkistaa, että painike on aktiivinen, oikea näkymä on näkyvissä ja otsikko vastaa näkymän muotoa.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.796542" elapsed="0.069323"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:47:15.960142" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="nakyma_4_viikko_takaisin.png"&gt;&lt;img src="nakyma_4_viikko_takaisin.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>nakyma_4_viikko_takaisin.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.865993" elapsed="0.094263"/>
+</kw>
+<doc>Testaa Kuukausi-, Päivä- ja Viikko-painikkeet: jokaisen painalluksen jälkeen oikea painike on
+aktiivinen, oikea kalenterinäkymä näkyy ja otsikon muoto vastaa näkymää.</doc>
+<status status="PASS" start="2026-11-20T11:47:14.939611" elapsed="1.020821"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-11-20T11:47:15.961036" elapsed="2.192038"/>
+</kw>
+<status status="PASS" start="2026-11-20T11:47:13.224055" elapsed="4.929191"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test 2" id="s1" pass="1" fail="0" skip="0">Test 2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

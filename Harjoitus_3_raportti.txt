@@ -1,0 +1,18 @@
+Mitä testasin?
+
+Testasin tehtävän annossa ehdotettua "lukkarikone.fi" verkkosivustoa.
+
+
+TESTI1: testasi vaihtuuko sivuston kieli suomesta englanniksi, sekä sitten takaisin englannista suomeksi, testi toimi oikein hyvin.
+Testissä käytettiin kielenvaihto buttomia, mikä löytyy header osiosta sivustolla "lukkarikone.fi".
+Buttomia painettaessa aria-expanded vaihtui arvoon "true", ja valikon luokkaan tuli "show".
+Sitten testi varmisti että kalenteri oli "Calendar", sekä kirjaudu oli "login".
+Tästä kuvat kansiossa tulokset.
+
+TESTI2: Tässä testataan kalenterin muokkausta viikkonäkymästä isompaan kuukauden mittaiseen näkymään, tai pienempään päivän mittaiseen.
+Kalenterissa on 3 vaihtoehtoa jolla saadaan kalenteri näyttämään kuukauden, viikon, päivän opinnot oppilaalle.
+Buttomia painettaessa testi testaa onko buttom aktiivinen, sekä buttomin nimi & nakyman nimi vastaavat toisiaan. Näkymän nimi vaihtuu buttomin ollessa aktiivinen, ja tätä siis verrataan keskenään testissä.
+Jokaisesta vaiheesta ottaa screenshotin kansioon tulokset 2.
+Kuvankaappaukset tekee SeleniumLibraryn työkalu "Capture Page Screenshot". Testeistä kirjoittuu
+automaattisesti myös "log.html, output.xml, report.html", log.html tiedostoon kuvat linkataan suoraan.
+Testeissä tarvittavat elementit ja buttomit on nimetty robot tiedostossa kohdassa "variables".

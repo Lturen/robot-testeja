@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.15.0 on win32)" generated="2026-11-20T11:31:26.709403" rpa="false" schemaversion="5">
+<suite id="s1" name="Test 1" source="C:\Users\Lauri Taurén\Desktop\Robot testeja\test_1.robot">
+<kw name="Avaa Lukkarikone" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:27.085322" level="INFO">Opening browser 'chrome' to base url 'https://lukkarikone.xamk.fi/#/schedule'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument("--disable-search-engine-choice-screen");add_argument("--start-maximized")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-11-20T11:31:27.085077" elapsed="0.897442"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LANG_BUTTON}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-20T11:31:27.982908" elapsed="0.239566"/>
+</kw>
+<status status="PASS" start="2026-11-20T11:31:27.084449" elapsed="1.138169"/>
+</kw>
+<test id="s1-t1" name="Sivuston Kielen Vaihto Toimii" line="21">
+<kw name="Kieli Pitaa Olla">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${LANG_BUTTON}</arg>
+<arg>${koodi}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.223484" elapsed="0.017848"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:28.252092" level="INFO">Current page contains text 'Kalenteri'.</msg>
+<arg>${teksti_1}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.241508" elapsed="0.010682"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:28.262850" level="INFO">Current page contains text 'Kirjaudu sisään'.</msg>
+<arg>${teksti_2}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.252349" elapsed="0.010587"/>
+</kw>
+<arg>FI</arg>
+<arg>Kalenteri</arg>
+<arg>Kirjaudu sisään</arg>
+<doc>Tarkistaa kielipainikkeen tekstin sekä kaksi sivun tekstiä valitulla kielellä.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.223196" elapsed="0.039836"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:28.335870" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="kieli_1_suomi.png"&gt;&lt;img src="kieli_1_suomi.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>kieli_1_suomi.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.263198" elapsed="0.072800"/>
+</kw>
+<kw name="Vaihda Kieli">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:28.336964" level="INFO">Clicking button 'id:lang-change'.</msg>
+<arg>${LANG_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.336741" elapsed="0.063099"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${kieli_valinta}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.400072" elapsed="0.014541"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:28.415055" level="INFO">Clicking element 'xpath://a[contains(@class,'dropdown-item') and normalize-space()='In English']'.</msg>
+<arg>${kieli_valinta}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.414821" elapsed="0.039295"/>
+</kw>
+<arg>${LANG_ENGLISH}</arg>
+<status status="PASS" start="2026-11-20T11:31:28.336298" elapsed="0.117945"/>
+</kw>
+<kw name="Kieli Pitaa Olla">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${LANG_BUTTON}</arg>
+<arg>${koodi}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.455102" elapsed="0.020212"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:28.537071" level="INFO">Current page contains text 'Calendar'.</msg>
+<arg>${teksti_1}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.475875" elapsed="0.061314"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:28.552870" level="INFO">Current page contains text 'Login'.</msg>
+<arg>${teksti_2}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.537398" elapsed="0.015600"/>
+</kw>
+<arg>EN</arg>
+<arg>Calendar</arg>
+<arg>Login</arg>
+<doc>Tarkistaa kielipainikkeen tekstin sekä kaksi sivun tekstiä valitulla kielellä.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.454635" elapsed="0.098507"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:28.630067" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="kieli_2_englanti.png"&gt;&lt;img src="kieli_2_englanti.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>kieli_2_englanti.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.553426" elapsed="0.076732"/>
+</kw>
+<kw name="Vaihda Kieli">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:28.630842" level="INFO">Clicking button 'id:lang-change'.</msg>
+<arg>${LANG_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.630636" elapsed="0.058597"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${kieli_valinta}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.689387" elapsed="0.013740"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:28.703506" level="INFO">Clicking element 'xpath://a[contains(@class,'dropdown-item') and normalize-space()='Suomeksi']'.</msg>
+<arg>${kieli_valinta}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.703297" elapsed="0.035074"/>
+</kw>
+<arg>${LANG_FINNISH}</arg>
+<status status="PASS" start="2026-11-20T11:31:28.630339" elapsed="0.108129"/>
+</kw>
+<kw name="Kieli Pitaa Olla">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${LANG_BUTTON}</arg>
+<arg>${koodi}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.738897" elapsed="0.045060"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:28.798585" level="INFO">Current page contains text 'Kalenteri'.</msg>
+<arg>${teksti_1}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.784212" elapsed="0.014471"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:28.813760" level="INFO">Current page contains text 'Kirjaudu sisään'.</msg>
+<arg>${teksti_2}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.798829" elapsed="0.015064"/>
+</kw>
+<arg>FI</arg>
+<arg>Kalenteri</arg>
+<arg>Kirjaudu sisään</arg>
+<doc>Tarkistaa kielipainikkeen tekstin sekä kaksi sivun tekstiä valitulla kielellä.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.738632" elapsed="0.075399"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:28.929137" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="kieli_3_takaisin_suomeksi.png"&gt;&lt;img src="kieli_3_takaisin_suomeksi.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>kieli_3_takaisin_suomeksi.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.814269" elapsed="0.114983"/>
+</kw>
+<doc>Vaihtaa kielen suomesta englantiin ja takaisin sekä tarkistaa, että valittu kieli on käytössä.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.222703" elapsed="0.706676"/>
+</test>
+<test id="s1-t2" name="Tilahaku Nayttaa Luokan Varaukset" line="32">
+<kw name="Hae Tila">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:28.930447" level="INFO">Clicking element 'xpath://label[contains(.,'Hae tiloja')]'.</msg>
+<arg>${HAE_TILOJA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.930273" elapsed="0.038788"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:28.969504" level="INFO">Typing text 'E101' into text field 'css:input[placeholder^='Anna hakusana']'.</msg>
+<arg>${HAKUKENTTA}</arg>
+<arg>${hakusana}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:31:28.969239" elapsed="0.071059"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:29.040678" level="INFO">Clicking button 'xpath://button[normalize-space()='Hae']'.</msg>
+<arg>${HAE_NAPPI}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:31:29.040459" elapsed="0.136911"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${HAKUTULOS_RIVI}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-20T11:31:29.177643" elapsed="0.220691"/>
+</kw>
+<arg>${TILA}</arg>
+<status status="PASS" start="2026-11-20T11:31:28.930025" elapsed="0.468407"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:29.467036" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tilahaku_1_hakutulos.png"&gt;&lt;img src="tilahaku_1_hakutulos.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>tilahaku_1_hakutulos.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-11-20T11:31:29.398582" elapsed="0.068543"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:29.472718" level="INFO">Current page contains element 'css:.search-result-row'.</msg>
+<arg>${HAKUTULOS_RIVI}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-11-20T11:31:29.467282" elapsed="0.005515"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:29.484718" level="INFO">Element 'css:.search-result-row' contains text 'E101'.</msg>
+<arg>${HAKUTULOS_RIVI}</arg>
+<arg>${TILA}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-11-20T11:31:29.472935" elapsed="0.011867"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:29.485158" level="INFO">Clicking button 'css:.search-result-row button.btn-add-row'.</msg>
+<arg>${LISAA_NAPPI}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:31:29.484945" elapsed="0.051800"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${KALENTERI_VARAUS}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-20T11:31:29.536917" elapsed="0.218964"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:29.848086" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tilahaku_2_varaukset.png"&gt;&lt;img src="tilahaku_2_varaukset.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>tilahaku_2_varaukset.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-11-20T11:31:29.756078" elapsed="0.092130"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:29.853694" level="INFO">${maara} = 7</msg>
+<var>${maara}</var>
+<arg>${KALENTERI_VARAUS}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:31:29.848420" elapsed="0.005315"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${maara} &gt; 0</arg>
+<arg>Kalenterissa ei näy yhtään varausta tilalle ${TILA}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-11-20T11:31:29.853895" elapsed="0.000427"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:29.865135" level="INFO">${ensimmainen} = 9:00 - 11:30
+Studia/Juulia Hiltunen
+E101, Mikkeli</msg>
+<var>${ensimmainen}</var>
+<arg>${KALENTERI_VARAUS}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-20T11:31:29.854429" elapsed="0.010747"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-11-20T11:31:29.865628" level="INFO">Ensimmäinen varaus: 9:00 - 11:30
+Studia/Juulia Hiltunen
+E101, Mikkeli</msg>
+<arg>Ensimmäinen varaus: ${ensimmainen}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-11-20T11:31:29.865357" elapsed="0.000316"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${ensimmainen}</arg>
+<arg>${TILA}</arg>
+<doc>Fails if the `container` does not contain the `item` one or more times.</doc>
+<status status="PASS" start="2026-11-20T11:31:29.865783" elapsed="0.001028"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-11-20T11:31:29.876326" level="INFO">Current page contains text 'E101, Mikkeli'.</msg>
+<arg>${TILA}, Mikkeli</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-11-20T11:31:29.866922" elapsed="0.009484"/>
+</kw>
+<doc>Hakee luokan E101 ja tarkistaa, että haku löytää tilan ja kalenterissa näkyvät varaukset kuuluvat siihen.
+(Tehtävänannon MB316 ei ole Xamkin lukkarikoneessa, joten käytetään luokkaa E101.)</doc>
+<status status="PASS" start="2026-11-20T11:31:28.929592" elapsed="0.946945"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-11-20T11:31:29.876953" elapsed="2.223642"/>
+</kw>
+<status status="PASS" start="2026-11-20T11:31:26.711065" elapsed="5.389611"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test 1" id="s1" pass="2" fail="0" skip="0">Test 1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

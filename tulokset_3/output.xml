@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.15.0 on win32)" generated="2026-11-21T13:29:36.562818" rpa="false" schemaversion="5">
+<suite id="s1" name="Test 3" source="C:\Users\Lauri Taurén\Desktop\Robot testeja\test_3.robot">
+<test id="s1-t1" name="Kirjaudu Sisaan Painike Ohjaa Microsoft Kirjautumiseen" line="21">
+<kw name="Avaa Lukkarikone" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-11-21T13:29:37.011747" level="INFO">Opening browser 'chrome' to base url 'https://lukkarikone.xamk.fi/#/schedule'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument("--disable-search-engine-choice-screen");add_argument("--start-maximized")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-11-21T13:29:37.011517" elapsed="0.915041"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${KIRJAUTUMIS_NAPPI}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-21T13:29:37.926958" elapsed="0.285771"/>
+</kw>
+<status status="PASS" start="2026-11-21T13:29:37.010853" elapsed="1.202014"/>
+</kw>
+<kw name="Klikkaa Kirjaudu Sisaan">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-11-21T13:29:38.213535" level="INFO">Clicking button 'xpath://button[contains(., 'Kirjaudu sisään')]'.</msg>
+<arg>${KIRJAUTUMIS_NAPPI}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-21T13:29:38.213333" elapsed="0.916872"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MS_SAHKOPOSTI}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-21T13:29:39.130363" elapsed="0.707327"/>
+</kw>
+<status status="PASS" start="2026-11-21T13:29:38.213079" elapsed="1.624720"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-11-21T13:29:39.842194" level="INFO">Current location contains 'login.microsoftonline.com'.</msg>
+<arg>login.microsoftonline.com</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-11-21T13:29:39.837916" elapsed="0.004371"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-11-21T13:29:39.850126" level="INFO">Element 'id:i0116' is displayed.</msg>
+<arg>${MS_SAHKOPOSTI}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-21T13:29:39.842436" elapsed="0.007771"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-11-21T13:29:40.250255" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="kirjautuminen_1_microsoft.png"&gt;&lt;img src="kirjautuminen_1_microsoft.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>kirjautuminen_1_microsoft.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-11-21T13:29:39.850376" elapsed="0.400009"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-11-21T13:29:40.250759" elapsed="2.154719"/>
+</kw>
+<doc>Painike "Kirjaudu sisään" vie Microsoftin kirjautumissivulle, jossa on sähköpostikenttä.</doc>
+<status status="PASS" start="2026-11-21T13:29:37.010218" elapsed="5.395453"/>
+</test>
+<test id="s1-t2" name="Kirjautuminen Epaonnistuu Vaaralla Kayttajatunnuksella" line="28">
+<kw name="Avaa Lukkarikone" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-11-21T13:29:42.407571" level="INFO">Opening browser 'chrome' to base url 'https://lukkarikone.xamk.fi/#/schedule'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument("--disable-search-engine-choice-screen");add_argument("--start-maximized")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-11-21T13:29:42.407341" elapsed="1.404745"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${KIRJAUTUMIS_NAPPI}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-21T13:29:43.812328" elapsed="0.252035"/>
+</kw>
+<status status="PASS" start="2026-11-21T13:29:42.406816" elapsed="1.657654"/>
+</kw>
+<kw name="Klikkaa Kirjaudu Sisaan">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-11-21T13:29:44.065069" level="INFO">Clicking button 'xpath://button[contains(., 'Kirjaudu sisään')]'.</msg>
+<arg>${KIRJAUTUMIS_NAPPI}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-21T13:29:44.064868" elapsed="0.176817"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MS_SAHKOPOSTI}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-21T13:29:44.242005" elapsed="1.209653"/>
+</kw>
+<status status="PASS" start="2026-11-21T13:29:44.064636" elapsed="1.387125"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-11-21T13:29:45.452116" level="INFO">Typing text 'olematon.kayttaja.12345@xamk.fi' into text field 'id:i0116'.</msg>
+<arg>${MS_SAHKOPOSTI}</arg>
+<arg>olematon.kayttaja.12345@xamk.fi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-21T13:29:45.451894" elapsed="0.079453"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-11-21T13:29:45.532076" level="INFO">Clicking element 'id:idSIButton9'.</msg>
+<arg>${MS_SEURAAVA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-21T13:29:45.531684" elapsed="0.080761"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MS_VIRHE}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-21T13:29:45.612750" elapsed="0.463440"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2026-11-21T13:29:46.092086" level="INFO">Element 'id:i0118' exists but is not displayed.</msg>
+<arg>${MS_SALASANA}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2026-11-21T13:29:46.076766" elapsed="0.015410"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-11-21T13:29:46.472798" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="kirjautuminen_2_vaara_tunnus.png"&gt;&lt;img src="kirjautuminen_2_vaara_tunnus.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>kirjautuminen_2_vaara_tunnus.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-11-21T13:29:46.092353" elapsed="0.380800"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-11-21T13:29:46.473535" elapsed="2.182163"/>
+</kw>
+<doc>Olematon käyttäjätunnus ei pääse eteenpäin, vaan sivu näyttää virheilmoituksen.</doc>
+<status status="PASS" start="2026-11-21T13:29:42.406208" elapsed="6.249593"/>
+</test>
+<test id="s1-t3" name="Kirjautuminen Onnistuu Oikeilla Tunnuksilla" line="37">
+<kw name="Avaa Lukkarikone" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-11-21T13:29:48.657732" level="INFO">Opening browser 'chrome' to base url 'https://lukkarikone.xamk.fi/#/schedule'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument("--disable-search-engine-choice-screen");add_argument("--start-maximized")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-11-21T13:29:48.657518" elapsed="1.305725"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${KIRJAUTUMIS_NAPPI}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-11-21T13:29:49.963432" elapsed="0.428445"/>
+</kw>
+<status status="PASS" start="2026-11-21T13:29:48.656913" elapsed="1.735081"/>
+</kw>
+<kw name="Skip If" owner="BuiltIn">
+<msg time="2026-11-21T13:29:50.392765" level="SKIP">Tunnuksia ei annettu</msg>
+<arg>'${USERNAME}' == '' or '${PASSWORD}' == ''</arg>
+<arg>Tunnuksia ei annettu</arg>
+<doc>Conditionally stops the current test or task and sets its status to SKIP.</doc>
+<status status="SKIP" start="2026-11-21T13:29:50.392139" elapsed="0.017838">Tunnuksia ei annettu</status>
+</kw>
+<kw name="Klikkaa Kirjaudu Sisaan">
+<status status="NOT RUN" start="2026-11-21T13:29:50.410192" elapsed="0.000035"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${MS_SAHKOPOSTI}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-11-21T13:29:50.410335" elapsed="0.000026"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${MS_SEURAAVA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-11-21T13:29:50.410460" elapsed="0.000023"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MS_SALASANA}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-11-21T13:29:50.410560" elapsed="0.000022"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<arg>${MS_SALASANA}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-11-21T13:29:50.410670" elapsed="0.000021"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${MS_SEURAAVA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-11-21T13:29:50.410785" elapsed="0.000020"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MS_SEURAAVA}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-11-21T13:29:50.410879" elapsed="0.000021"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>id:idBtn_Back</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-11-21T13:29:50.410995" elapsed="0.000021"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>lukkarikone.xamk.fi</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="NOT RUN" start="2026-11-21T13:29:50.411088" elapsed="0.000021"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${VIIKKO_NAPPI}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-11-21T13:29:50.411182" elapsed="0.000020"/>
+</kw>
+<kw name="Page Should Not Contain Button" owner="SeleniumLibrary">
+<arg>${KIRJAUTUMIS_NAPPI}</arg>
+<doc>Verifies button ``locator`` is not found from current page.</doc>
+<status status="NOT RUN" start="2026-11-21T13:29:50.411275" elapsed="0.000020"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>kirjautuminen_3_onnistui.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-11-21T13:29:50.411397" elapsed="0.000021"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-11-21T13:29:50.411589" elapsed="2.127455"/>
+</kw>
+<doc>Vaatii oikeat tunnukset (--variable USERNAME / PASSWORD). Ohitetaan, jos tunnuksia ei ole annettu.
+Ei toimi tilillä, jolla on monivaihetunnistus (MFA), ellei sitä hyväksytä käsin.</doc>
+<status status="SKIP" start="2026-11-21T13:29:48.656184" elapsed="3.883008">Tunnuksia ei annettu</status>
+</test>
+<status status="PASS" start="2026-11-21T13:29:36.565181" elapsed="15.974937"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test 3" id="s1" pass="2" fail="0" skip="1">Test 3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
