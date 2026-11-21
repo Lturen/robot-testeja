@@ -2,6 +2,60 @@ Mitä testasin?
 
 Testasin tehtävän annossa ehdotettua "lukkarikone.fi" verkkosivustoa.
 
+Miten harjoitus onnistui?
+
+Ihan hyvin mitä nyt focusoiduin testejä tekemään, sekä syventymään robotframeworkin toimintaan.
+Aluksi oli ongelmia saada seleniumlibrary toimimaan, muistaakseni johtui siitä
+ettei code tunnistanut kieltä, vaan piti asentaa laajennus, jonka myötä robot kieli muuttui ihmisluettavammaksi.
+Tähän raporttiin oli varattu hyvin aikaa, joten siitä ei valittamista.
+
+Mitä ongelmia kohtasit harjoitusta tehdessä?
+
+Ed. mainitsemani ongelma kielen tunnistamiseksi codessa.
+Materiaali luettaessa toisinaan kohtasin ongelman etten ymmärtänyt englantia, jossa puhuttiin työkaluista, joita en ollut ennen kuullut, ja tuon myötä
+mielestäni tuli ongelma etten enää ymmärtänyt lukemaani.
+
+Mitä opit?
+
+Robotframeworkista opitut asiat rakentuivat aikaisempien tehtävien päälle,
+nyt vain testit oli automatisoituja, manuaalisen sijaan.
+Aikaisempien testien raportointi tehtiin käsin, nyt käytettiin seleniumlibraryn työkaluja raportointiin.
+
+
+***SETTINGS***
+library:
+Tämä osio testissä tuo käyttöön seleniumlibraryn, tämän myötä komennot "open browser, click buttom, Imput Test"
+Selainta siis ohjataan komennoilla.
+
+Test setup:
+Tässä määritellään mikä sivusto avataan testien suorittamiseen,
+jokainen testi aukeaa ns. puhtaalta pöydältä.
+
+Test Teardown Close All Browsers:
+ajetaan jokaisen testin jälkeen, sulkee siis selaimen.
+Jos testi epäonnistuu, selain suljetaan jokatapauksessa.
+
+***Variables***
+Täällä sijaitsee arvot jotka nimetään testiin, voisi sanoa parametreiksi.
+Tässä myös ohjeet testille, miten elementti etsitään sivulta.
+
+***Test Cases***
+Varsinaiset testit ovat täällä, jokainen testi on oma kokonaisuutensa,
+ja se on nimetty aina vasemmalla reunalla.
+Testin sisällä jokainen rivi on oma vaiheensa, tuosta siis voidaan katsoa onko testi
+monivaiheinen.
+Jos testin yksikin vaihe epäonnistuu, testi lopetaan siihen.
+
+
+***Key Words***
+Tässä voidaan nimetä omia komentoja, seleniumlibrary tuo omat standartoidut
+komentonsa esim. "click buttom", mutta voidaan nimetä itsekkin esim. paina nappulaa.
+Testi pysyy luettavana käyttäjälle. Kovin on selkeä vaihevaiheelta esittely, mitä vaiheita testi pitää sisällään.
+
+kansiossa myös chromedriver.exe joka on Chromen virallinen ohjain.
+Valitsemamme kirjasto käyttää sitä Chrome selaimen ohjaamiseen.
+Ilman sitä komennot open brower ei toimisi, ellei sitten ohjaimen lataus suoriteta itse testissä.
+
 
 TESTI1: testasi vaihtuuko sivuston kieli suomesta englanniksi, sekä sitten takaisin englannista suomeksi, testi toimi oikein hyvin.
 Testissä käytettiin kielenvaihto buttomia, mikä löytyy header osiosta sivustolla "lukkarikone.fi".
@@ -16,3 +70,8 @@ Jokaisesta vaiheesta ottaa screenshotin kansioon tulokset 2.
 Kuvankaappaukset tekee SeleniumLibraryn työkalu "Capture Page Screenshot". Testeistä kirjoittuu
 automaattisesti myös "log.html, output.xml, report.html", log.html tiedostoon kuvat linkataan suoraan.
 Testeissä tarvittavat elementit ja buttomit on nimetty robot tiedostossa kohdassa "variables".
+
+TESTI3: testi testaa ohjaako login buttom oikeaan kirjautumis välilehteen, 
+sekä samalla testataan väärillä tunnuksilla antaako virhe ilmoituksen.
+Testissä samat seleniumlibraryn työkalut kuvankaappauksineen.
+Testiin voidaan lisätä myös oikeat tunnukset, mutta sen nyt tekemättä syystä että raportti lähetetään eteenpäin.
